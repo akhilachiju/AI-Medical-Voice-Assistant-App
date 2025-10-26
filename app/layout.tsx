@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import Header from "@/components/Header";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -13,9 +14,10 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Doc VCare",
-  description: "AI-powered medical voice assistant that transcribes and organizes doctor-patient conversations with accuracy and security.",
-   icons: {
+  title: "VCare",
+  description:
+    "AI-powered medical voice assistant that transcribes and organizes doctor-patient conversations with accuracy and security.",
+  icons: {
     icon: "/logo.png",
   },
 };
@@ -30,7 +32,12 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {children}
+        <div>
+          <Header />
+          <div className="px-4 sm:px-10 md:px-20 lg:px-40 py-6 sm:py-10">
+            {children}
+          </div>
+        </div>
       </body>
     </html>
   );

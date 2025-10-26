@@ -13,8 +13,11 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "AI Medical Voice App",
+  title: "Doc VCare",
   description: "AI-powered medical voice assistant that transcribes and organizes doctor-patient conversations with accuracy and security.",
+   icons: {
+    icon: "/logo.png",
+  },
 };
 
 export default function RootLayout({

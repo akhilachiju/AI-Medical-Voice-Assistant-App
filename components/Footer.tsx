@@ -69,7 +69,7 @@ export default function Footer() {
                 alt="VCare Logo"
                 className="w-12 h-12 rounded-full"
               />
-              <span className="text-white hover:text-blue-600 transition-colors font-bold text-xl">
+              <span className="text-white hover:text-blue-600 transition-colors font-bold text-2xl">
                 VCare
               </span>
             </Link>

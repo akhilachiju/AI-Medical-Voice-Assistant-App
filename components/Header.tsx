@@ -19,7 +19,7 @@ export default function Header() {
   const toggleMenu = () => setIsOpen(!isOpen);
 
   return (
-    <header className="bg-white shadow-md">
+    <header className="bg-gray-900 shadow-md">
       {/* Top bar: Logo + Nav + Right Section */}
       <div className="container mx-auto flex items-center justify-between px-4 sm:px-6 md:px-10 lg:px-20 h-16">
         
@@ -33,13 +33,13 @@ export default function Header() {
             className="rounded-full"
             priority
           />
-          <h1 className="text-xl sm:text-2xl md:text-3xl font-bold text-blue-500  hover:text-blue-700">
+          <h1 className="text-xl sm:text-2xl md:text-3xl font-bold text-white  hover:text-blue-700">
             VCare
           </h1>
         </Link>
 
         {/* Desktop & Tablet Menu */}
-        <nav className="hidden sm:flex md:flex items-center gap-8 text-blue-500 font-medium">
+        <nav className="hidden sm:flex md:flex items-center gap-8 text-white font-medium">
           {menuOptions.map((menu) => (
             <Link
               key={menu.id}

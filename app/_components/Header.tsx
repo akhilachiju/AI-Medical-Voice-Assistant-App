@@ -8,6 +8,7 @@ import { Button } from "../components/ui/button";
 import { UserButton, SignedIn, SignedOut } from "@clerk/nextjs";
 import { usePathname } from "next/navigation";
 
+
 interface HeaderProps {
   showLandingNav?: boolean; 
 }
@@ -70,7 +71,7 @@ export default function Header({ showLandingNav = true }: HeaderProps) {
         <div className="container mx-auto flex items-center justify-between px-4 sm:px-6 md:px-10 lg:px-20 h-16">
           {/* Logo */}
           <Link
-            href="/#home"
+            href="/"
             onClick={(e) => handleScrollToSection(e, "home")}
             className="flex items-center cursor-pointer"
           >
@@ -107,9 +108,9 @@ export default function Header({ showLandingNav = true }: HeaderProps) {
           <div className="flex items-center gap-3">
             <SignedOut>
               <Link href="/sign-in">
-                <div className="w-8 h-8 flex items-center justify-center rounded-full bg-blue-600 hover:bg-blue-700 transition-all cursor-pointer">
+                <button className="w-8 h-8 flex items-center justify-center rounded-full bg-blue-600 hover:bg-blue-700 transition-all cursor-pointer">
                   <User className="w-4 h-4 text-white" />
-                </div>
+                </button>
               </Link>
             </SignedOut>
 
@@ -118,6 +119,11 @@ export default function Header({ showLandingNav = true }: HeaderProps) {
                 {!pathname.startsWith("/dashboard") && (
                   <Button className="bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-xl px-4 py-2 transition-all">
                     <Link href="/dashboard">Dashboard</Link>
+                  </Button>
+                )}
+                {pathname.startsWith("/dashboard") && (
+                  <Button className="bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-xl px-4 py-2 transition-all">
+                    <Link href="/">Home</Link>
                   </Button>
                 )}
                 <UserButton afterSignOutUrl="/" />

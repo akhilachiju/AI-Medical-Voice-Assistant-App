@@ -1,9 +1,31 @@
-import React from "react";
+"use client";
 
-export default function PrivacyPolicyPage() {
+import React from "react";
+import { X } from "lucide-react";
+
+interface PrivacyModalProps {
+  isOpen: boolean;
+  onClose: () => void;
+}
+
+export default function PrivacyModal({ isOpen, onClose }: PrivacyModalProps) {
+  if (!isOpen) return null;
+
   return (
-    <main className="min-h-screen py-12 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-4xl mx-auto bg-transparent border border-blue-700 hover:border-blue-700 rounded-2xl shadow-md p-8 sm:p-10">
+    <div className="fixed inset-0 z-50 flex items-center justify-center">
+      <div 
+        className="absolute inset-0 bg-black/50 backdrop-blur-sm"
+        onClick={onClose}
+      />
+      
+      <div className="relative bg-transparent border border-blue-700 hover:border-blue-700 rounded-2xl shadow-md max-w-4xl max-h-[90vh] overflow-y-auto m-4 p-8 sm:p-10">
+        <button
+          onClick={onClose}
+          className="absolute top-4 right-4 text-gray-400 hover:text-white transition-colors"
+        >
+          <X size={24} />
+        </button>
+
         <h1 className="text-3xl sm:text-4xl font-bold text-center text-white mb-6">
           VCare Privacy Policy
         </h1>
@@ -14,7 +36,7 @@ export default function PrivacyPolicyPage() {
         <section className="space-y-6 dark:text-neutral-400 leading-relaxed">
           <p>
             Welcome to <strong>VCare – AI Medical Voice Assistant</strong>
-            {" "} (“VCare,” “we,” “us,” or “our”). We empower healthcare professionals
+            {" "} ("VCare," "we," "us," or "our"). We empower healthcare professionals
             with seamless, voice-driven documentation. Your privacy and data
             protection are our top priorities.
           </p>
@@ -68,7 +90,7 @@ export default function PrivacyPolicyPage() {
               href="mailto:support@vcare.ai"
               className="text-blue-600 hover:underline"
             >
-              support@vcare.ai
+              support@vcare.test
             </a>
             .
           </p>
@@ -103,6 +125,6 @@ export default function PrivacyPolicyPage() {
           </ul>
         </section>
       </div>
-    </main>
+    </div>
   );
 }

@@ -1,17 +1,19 @@
-import dynamic from "next/dynamic";
+import Header from "../_components/Header";
+import Footer from "../_components/Footer";
 import LayoutLoader from "@/app/_components/loading/LayoutLoader";
-
-const Header = dynamic(() => import("../_components/Header"), { ssr: true });
-const Footer = dynamic(() => import("../_components/Footer"), { ssr: true });
+import LandingContent from "./LandingContent";
+import { AuthModalProvider } from "../_components/AuthModalProvider";
 
 export default function LandingLayout({ children }: { children: React.ReactNode }) {
   return (
     <LayoutLoader text="VCare">
-      <div className="flex flex-col min-h-screen">
-        <Header showLandingNav={true} />
-        <main className="grow">{children}</main>
-        <Footer />
-      </div>
+      <AuthModalProvider>
+        <LandingContent>
+          <Header showLandingNav={true} />
+          <main className="grow">{children}</main>
+          <Footer />
+        </LandingContent>
+      </AuthModalProvider>
     </LayoutLoader>
   );
 }

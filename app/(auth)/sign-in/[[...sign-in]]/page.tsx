@@ -1,35 +1,24 @@
 import { SignIn } from "@clerk/nextjs";
+import AuthPageModal from "@/app/_components/AuthPageModal";
 
 export default function SignInPage() {
   return (
-    <div
-      className="w-full flex flex-col items-center justify-center px-6 md:px-10 lg:px-20 py-10 md:py-14 bg-transparent">
-      {/* Outer glassy card container */}
-      <div
-        className="         
-          bg-gray-900/40 
-          border border-blue-600/80 
-          rounded-2xl 
-          py-3 sm:py-4 md:py-6
-          px-3 sm:px-4 md:px-6
-          shadow-md shadow-blue-600/30 
-          backdrop-blur-xl 
-          transition-all duration-300 
-          hover:shadow-blue-700/50
-          flex items-center justify-center
-        "
-      >
-        <SignIn
-          appearance={{
-            variables: {
-              colorPrimary: "#1d4ed8",
-            },
-          }}
-          signUpUrl="/sign-up"
-          afterSignInUrl="/dashboard"
-          redirectUrl="/dashboard"
-        />
-      </div>
-    </div>
+    <AuthPageModal>
+      <SignIn
+        routing="hash"
+        appearance={{
+          variables: {
+            colorPrimary: "#1d4ed8",
+          },
+          elements: {
+            rootBox: "w-full",
+            card: "shadow-none border-0 bg-transparent"
+          }
+        }}
+        signUpUrl="/sign-up"
+        afterSignInUrl="/dashboard"
+        redirectUrl="/dashboard"
+      />
+    </AuthPageModal>
   );
 }

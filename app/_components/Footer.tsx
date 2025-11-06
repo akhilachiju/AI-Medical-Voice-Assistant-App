@@ -1,19 +1,22 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import Link from "next/link"; 
 import * as LucideIcons from "lucide-react";
 import { Button } from "../components/ui/button";
+import PrivacyModal from "./PrivacyModal";
 
 type MenuOption = { id: number; name: string; path: string };
 
 export default function Footer() {
+  const [isPrivacyModalOpen, setIsPrivacyModalOpen] = useState(false);
+
   const companyLinks: MenuOption[] = [
     { id: 1, name: "Home", path: "home" },
     { id: 2, name: "About Us", path: "about" },
     { id: 3, name: "Pricing", path: "pricing" },
     { id: 4, name: "Contact Us", path: "contact" },
-    { id: 5, name: "Privacy Policy", path: "/privacy" }, // external route
+    { id: 5, name: "Privacy Policy", path: "privacy" },
   ];
 
   const socialIcons = [
@@ -24,8 +27,11 @@ export default function Footer() {
 
   // Smooth scroll handler
   const handleScroll = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>, id: string) => {
-    if (id.startsWith("/")) return; // external/internal route
     e.preventDefault();
+    if (id === "privacy") {
+      setIsPrivacyModalOpen(true);
+      return;
+    }
     const el = document.getElementById(id);
     if (el) {
       el.scrollIntoView({ behavior: "smooth", block: "start" });
@@ -71,7 +77,7 @@ export default function Footer() {
             {companyLinks.map((link) => (
               <a
                 key={link.id}
-                href={link.path.startsWith("/") ? link.path : `#${link.path}`}
+                href={`#${link.path}`}
                 onClick={(e) => handleScroll(e, link.path)}
                 className="hover:text-blue-600 transition-colors text-sm md:text-base cursor-pointer"
               >
@@ -108,6 +114,12 @@ export default function Footer() {
           &copy; {new Date().getFullYear()} VCare. All rights reserved.
         </div>
       </div>
+
+      {/* Privacy Modal */}
+      <PrivacyModal 
+        isOpen={isPrivacyModalOpen} 
+        onClose={() => setIsPrivacyModalOpen(false)} 
+      />
     </footer>
   );
 }

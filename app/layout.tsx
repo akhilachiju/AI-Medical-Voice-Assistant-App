@@ -1,48 +1,23 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.css";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
 import { ClerkProvider } from "@clerk/nextjs";
-import Provider from "./provider";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+import "./globals.css";
 
 export const metadata: Metadata = {
   title: "VCare",
-  description:
-    "AI-powered medical voice assistant that transcribes and organizes doctor-patient conversations with accuracy and security.",
-  icons: {
-    icon: "/logo.png",
-  },
+  description: "AI-powered voice assistant for medical professionals.",
+  icons: { icon: "/logo.png" },
 };
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
     <ClerkProvider>
-      <html lang="en">
-        <body
-          className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-        >
-          <div>
-            <Header />
-            <div className="px-4 sm:px-10 md:px-20 lg:px-40 py-6 sm:py-10">
-              <Provider>{children}</Provider>
-            </div>
-            <Footer />
-          </div>
+      <html lang="en" suppressHydrationWarning>
+        <body className="bg-linear-to-b from-slate-900 to-slate-800 text-white antialiased min-h-screen">
+          {children}
         </body>
       </html>
     </ClerkProvider>

@@ -1,0 +1,26 @@
+{
+  "name": "VCare - AI Medical Voice Assistant",
+  "short_name": "VCare",
+  "description": "AI-powered voice assistant for medical professionals",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#1e293b",
+  "theme_color": "#2563eb",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/logo.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "/logo.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable any"
+    }
+  ],
+  "categories": ["medical", "healthcare", "productivity"],
+  "lang": "en-US"
+}

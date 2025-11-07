@@ -108,9 +108,7 @@ export default function Header({ showLandingNav = true }: HeaderProps) {
           <div className="flex items-center gap-3">
             <SignedOut>
               <Link href="/sign-in">
-                <button className="w-8 h-8 flex items-center justify-center rounded-full bg-blue-600 hover:bg-blue-700 transition-all cursor-pointer">
-                  <User className="w-4 h-4 text-white" />
-                </button>
+                <User className="w-6 h-6 text-white hover:text-blue-400 transition-colors cursor-pointer" />
               </Link>
             </SignedOut>
 

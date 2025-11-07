@@ -6,6 +6,7 @@ export default function SignInPage() {
     <AuthPageModal>
       <SignIn
         routing="hash"
+        afterSignInUrl="/dashboard"
         appearance={{
           variables: {
             colorPrimary: "#1d4ed8",
@@ -16,8 +17,6 @@ export default function SignInPage() {
           }
         }}
         signUpUrl="/sign-up"
-        afterSignInUrl="/dashboard"
-        redirectUrl="/dashboard"
       />
     </AuthPageModal>
   );

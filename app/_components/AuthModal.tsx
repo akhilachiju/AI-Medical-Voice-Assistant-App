@@ -31,7 +31,6 @@ export default function AuthModal() {
         <div className="flex items-center justify-center">
           {mode === "signin" ? (
             <SignIn
-              routing="hash"
               appearance={{
                 variables: {
                   colorPrimary: "#1d4ed8",
@@ -41,12 +40,9 @@ export default function AuthModal() {
                   card: "shadow-none border-0 bg-transparent"
                 }
               }}
-              afterSignInUrl="/dashboard"
-              redirectUrl="/dashboard"
             />
           ) : (
             <SignUp
-              routing="hash"
               appearance={{
                 variables: {
                   colorPrimary: "#1d4ed8",
@@ -56,8 +52,6 @@ export default function AuthModal() {
                   card: "shadow-none border-0 bg-transparent"
                 }
               }}
-              afterSignUpUrl="/dashboard"
-              redirectUrl="/dashboard"
             />
           )}
         </div>

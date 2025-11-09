@@ -49,12 +49,6 @@ export default function Header({ showLandingNav = true }: HeaderProps) {
 
   const handleScrollToSection = (e: React.MouseEvent<HTMLAnchorElement>, id: string) => {
     e.preventDefault();
-    if (!showLandingNav) return; 
-
-    if (pathname !== "/") {
-      window.location.href = "/#" + id;
-      return;
-    }
     const el = document.getElementById(id);
     if (el) {
       el.scrollIntoView({ behavior: "smooth", block: "start" });
@@ -72,7 +66,6 @@ export default function Header({ showLandingNav = true }: HeaderProps) {
           {/* Logo */}
           <Link
             href="/"
-            onClick={(e) => handleScrollToSection(e, "home")}
             className="flex items-center cursor-pointer"
           >
             <Image src="/logo.png" alt="VCare Logo" width={45} height={45} className="rounded-full" />

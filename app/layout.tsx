@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { ClerkProvider } from "@clerk/nextjs";
+import Provider from "@/app/provider";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -54,7 +55,7 @@ export default function RootLayout({
     <ClerkProvider>
       <html lang="en" suppressHydrationWarning>
         <body className="bg-linear-to-b from-slate-900 to-slate-800 text-white antialiased min-h-screen">
-          {children}
+          <Provider>{children}</Provider>
         </body>
       </html>
     </ClerkProvider>

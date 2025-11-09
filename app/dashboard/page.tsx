@@ -1,3 +1,4 @@
+"use client";
 import History from "@/app/dashboard/_components/History";
 import DoctorAssistantList from "@/app/dashboard/_components/DoctorAssistantList";
 import DashboardHeader from "@/app/dashboard/_components/DashboardHeader";

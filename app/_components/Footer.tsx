@@ -96,7 +96,9 @@ export default function Footer() {
             <form className="flex flex-col sm:flex-row gap-2 w-full">
               <input
                 type="email"
-                placeholder="Your email"
+                placeholder="Your Email"
+                data-form-type="other"
+                autoComplete="off"
                 className="px-4 py-1 rounded-lg flex-1 border border-blue-700/30 bg-gray-900 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-700"
               />
               <Button

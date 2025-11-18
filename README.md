@@ -40,6 +40,3 @@ Neon (PostgreSQL)
 Drizzle ORM
 
 Clerk Authentication
-
-
-Install dependencies

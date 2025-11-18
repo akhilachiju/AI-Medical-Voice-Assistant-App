@@ -1,36 +1,45 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+VCare – AI-Powered Medical Voice Assistant
 
-## Getting Started
+VCare is an AI-powered voice assistant designed to help medical professionals streamline documentation, improve workflow efficiency, and manage patient interactions using real-time speech recognition.
 
-First, run the development server:
+🌟 Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+🎤 AI Voice Recognition optimized for medical terminology
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+👨‍⚕️ Medical Dashboard for healthcare providers
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+📋 Patient Documentation with instant transcription
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+🔐 Secure Authentication using Clerk
 
-## Learn More
+💳 Credit System for usage-based billing
 
-To learn more about Next.js, take a look at the following resources:
+⚡ Real-time Processing for fast results
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+🎨 Modern UI with Tailwind & Framer Motion
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+🚀 Tech Stack
+Frontend
 
-## Deploy on Vercel
+Next.js 16
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+React 19
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+TypeScript
+
+Tailwind CSS 4
+
+Framer Motion
+
+Lucide Icons
+
+Backend & Database
+
+Neon (PostgreSQL)
+
+Drizzle ORM
+
+Clerk Authentication
+
+
+Install dependencies

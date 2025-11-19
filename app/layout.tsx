@@ -4,7 +4,7 @@ import Provider from "@/app/provider";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://vcare.app'),
+  metadataBase: new URL('https://example-vcare.com'),
   title: "VCare - AI-Powered Medical Voice Assistant",
   description: "Revolutionary AI voice assistant designed for medical professionals. Streamline patient care, improve documentation, and enhance healthcare efficiency with advanced voice recognition technology.",
   keywords: ["AI medical assistant", "voice recognition", "healthcare technology", "medical documentation", "patient care", "healthcare AI"],
@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://vcare.app",
+    url: "https://example-vcare.com",
     title: "VCare - AI-Powered Medical Voice Assistant",
     description: "Revolutionary AI voice assistant for medical professionals. Streamline patient care and improve healthcare efficiency.",
     siteName: "VCare",
@@ -38,7 +38,6 @@ export const metadata: Metadata = {
     icon: "/logo.png",
     apple: "/logo.png",
   },
-  manifest: "/manifest.json",
 };
 
 export const viewport: Viewport = {
@@ -53,7 +52,7 @@ export default function RootLayout({
 }) {
   return (
     <ClerkProvider>
-      <html lang="en" suppressHydrationWarning>
+      <html lang="en" suppressHydrationWarning data-scroll-behavior="smooth">
         <body className="bg-linear-to-b from-slate-900 to-slate-800 text-white antialiased min-h-screen">
           <Provider>{children}</Provider>
         </body>

@@ -2,7 +2,7 @@
 
 import { useSearchParams } from "next/navigation";
 import { Suspense } from "react";
-import AuthPageModal from "./AuthPageModal";
+import AuthPageModal from "@/app/(auth)/AuthPageModal";
 
 function AuthPageContent({ children }: { children: React.ReactNode }) {
   const searchParams = useSearchParams();
@@ -15,7 +15,7 @@ function AuthPageContent({ children }: { children: React.ReactNode }) {
 
   // Full page mode - better for SEO, direct links
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 to-indigo-100 py-12 px-4">
+    <div className="min-h-screen flex items-center justify-center bg-linear-to-br from-blue-50 to-indigo-100 py-12 px-4">
       <div className="max-w-md w-full bg-white rounded-xl shadow-lg p-8">
         {children}
       </div>

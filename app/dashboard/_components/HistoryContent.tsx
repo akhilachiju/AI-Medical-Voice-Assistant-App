@@ -4,9 +4,11 @@ import { useState } from "react";
 import Image from "next/image";
 import { Button } from "@/app/components/ui/button";
 import { MotionWrapper, MotionText, MotionCard } from "@/app/_components/motion";
+import AddNewConsultation from "./AddNewConsultation";
 
 export default function HistoryContent() {
   const [history, setHistory] = useState<any[]>([]);
+  const [isDialogOpen, setIsDialogOpen] = useState(false);
 
   return (
     <>
@@ -27,7 +29,10 @@ export default function HistoryContent() {
           <p className="text-gray-500 text-sm sm:text-base mt-2">
             It looks like you haven't consulted with any doctors yet.
           </p>
-          <Button className="bg-blue-600 hover:bg-blue-700 text-white text-base sm:text-lg font-medium rounded-xl shadow-sm transition-all mt-5 px-6 py-3 sm:px-8 sm:py-3 w-full sm:w-auto">
+          <Button 
+            onClick={() => setIsDialogOpen(true)}
+            className="bg-blue-600 hover:bg-blue-700 text-white text-base sm:text-lg font-medium rounded-xl shadow-sm transition-all mt-5 px-6 py-3 sm:px-8 sm:py-3 w-full sm:w-auto"
+          >
             New Consultation
           </Button>
         </MotionCard>
@@ -49,6 +54,11 @@ export default function HistoryContent() {
           ))}
         </div>
       )}
+      
+      <AddNewConsultation 
+        isOpen={isDialogOpen} 
+        onClose={() => setIsDialogOpen(false)} 
+      />
     </>
   );
 }

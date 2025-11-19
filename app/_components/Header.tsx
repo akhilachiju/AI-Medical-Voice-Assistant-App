@@ -7,6 +7,7 @@ import { Menu, X, User } from "lucide-react";
 import { Button } from "../components/ui/button";
 import { UserButton, SignedIn, SignedOut } from "@clerk/nextjs";
 import { usePathname } from "next/navigation";
+import { useAuthModal } from "../(auth)/AuthModalProvider";
 
 
 interface HeaderProps {
@@ -17,6 +18,15 @@ export default function Header({ showLandingNav = true }: HeaderProps) {
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("home");
+  
+  // Conditionally use modal only if provider exists
+  let openModal: ((mode: "signin" | "signup") => void) | null = null;
+  try {
+    const modalContext = useAuthModal();
+    openModal = modalContext.openModal;
+  } catch {
+    // No provider available, will use Link instead
+  }
 
   const menuOptions = [
     { id: "home", name: "Home" },
@@ -100,9 +110,15 @@ export default function Header({ showLandingNav = true }: HeaderProps) {
           {/* Right Side */}
           <div className="flex items-center gap-3">
             <SignedOut>
-              <Link href="/sign-in">
-                <User className="w-6 h-6 text-white hover:text-blue-400 transition-colors cursor-pointer" />
-              </Link>
+              {openModal ? (
+                <button onClick={() => openModal("signin")}>
+                  <User className="w-6 h-6 text-white hover:text-blue-400 transition-colors cursor-pointer" />
+                </button>
+              ) : (
+                <Link href="/sign-in">
+                  <User className="w-6 h-6 text-white hover:text-blue-400 transition-colors cursor-pointer" />
+                </Link>
+              )}
             </SignedOut>
 
             <SignedIn>

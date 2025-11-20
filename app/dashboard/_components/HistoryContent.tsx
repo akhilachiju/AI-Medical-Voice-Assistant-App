@@ -4,7 +4,7 @@ import { useState } from "react";
 import Image from "next/image";
 import { Button } from "@/app/components/ui/button";
 import { MotionWrapper, MotionText, MotionCard } from "@/app/_components/motion";
-import AddNewConsultation from "./AddNewConsultation";
+import AddNewConsultation from "@/app/medicalAssistant/AddNewConsultation";
 
 export default function HistoryContent() {
   const [history, setHistory] = useState<any[]>([]);

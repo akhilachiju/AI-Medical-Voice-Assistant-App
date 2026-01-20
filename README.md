@@ -2,23 +2,23 @@ VCare – AI-Powered Medical Voice Assistant
 
 VCare is an AI-powered voice assistant designed to help medical professionals streamline documentation, improve workflow efficiency, and manage patient interactions using real-time speech recognition.
 
-🌟 Features
+Features
 
-🎤 AI Voice Recognition optimized for medical terminology
+AI Voice Recognition optimized for medical terminology
 
-👨‍⚕️ Medical Dashboard for healthcare providers
+Medical Dashboard for healthcare providers
 
-📋 Patient Documentation with instant transcription
+Patient Documentation with instant transcription
 
-🔐 Secure Authentication using Clerk
+Secure Authentication using Clerk
 
-💳 Credit System for usage-based billing
+Credit System for usage-based billing
 
-⚡ Real-time Processing for fast results
+Real-time Processing for fast results
 
-🎨 Modern UI with Tailwind & Framer Motion
+Modern UI with Tailwind & Framer Motion
 
-🚀 Tech Stack
+Tech Stack
 Frontend
 
 Next.js 16

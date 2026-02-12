@@ -23,7 +23,7 @@ An AI-powered medical consultation platform that helps users describe symptoms a
 - **UI Components**: Radix UI, Lucide Icons, Tabler Icons
 - **Animations**: Motion (Framer Motion)
 
-## Getting Started
+VCare is an AI-powered voice assistant designed to help medical professionals streamline documentation, improve workflow efficiency, and manage patient interactions using real-time speech recognition.
 
 ### Prerequisites
 
